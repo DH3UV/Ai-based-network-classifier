@@ -1,18 +1,18 @@
-# 🛡️ AI-Based Network Traffic Classification
+# 🛡️ AI-Based Network Traffic Classifier
 
-A simple Machine Learning project that identifies network traffic as **BENIGN (normal)** or **PortScan (suspicious activity)** using a Random Forest Classifier.
+A Machine Learning project built using Python to classify network traffic into two categories: **BENIGN (normal traffic)** and **PortScan (suspicious activity)**.
 
-The project uses the CICIDS2017 dataset and provides a Streamlit dashboard where users can upload network traffic CSV files and view classification results.
+The project uses a Random Forest Classifier trained on the CICIDS2017 dataset and includes a simple Streamlit dashboard to view traffic classification results.
 
 ## 🚀 Features
 
 - Classifies network traffic as BENIGN or PortScan.
-- Uses a Random Forest Machine Learning model.
-- Upload network traffic CSV files through a web dashboard.
-- Displays traffic statistics using charts.
-- Shows PortScan prediction probabilities.
-- Allows users to download classification results.
-- Displays model evaluation when actual labels are available.
+- Uses a Random Forest Machine Learning algorithm.
+- Upload network traffic CSV files.
+- Displays traffic statistics through charts.
+- Shows prediction probabilities.
+- Allows downloading classification results.
+- Provides model evaluation when actual labels are available.
 
 ## 🛠️ Technologies Used
 
@@ -24,32 +24,27 @@ The project uses the CICIDS2017 dataset and provides a Streamlit dashboard where
 - Matplotlib
 - Joblib
 
-## 📂 Project Structure
+## 📁 Project Structure
 
 ```text
-AI-Based-Network-Classifier/
+Ai-based-network-classifier/
 │
-├── dataset/
-│   └── (CICIDS2017 dataset)
-│
-├── train_model.py
 ├── app.py
-├── requirements.txt
-├── traffic_classifier.pkl
+├── train_model.py
 └── README.md
 ```
+
+The dataset and trained model are not included in this repository.
 
 ## 📊 Dataset
 
 This project uses the **CICIDS2017 dataset**.
 
-The dataset files are not included in this repository because of their large size.
+You can download it from the official website:
 
-Download it from:
+https://www.unb.ca/cic/datasets/ids-2017.html
 
-[ CICIDS2017 Dataset – Official Website](https://www.unb.ca/cic/datasets/ids-2017.html)
-
-After downloading, place the following CSV file inside the `dataset` folder:
+After downloading, create a folder named `dataset` in the project directory and place this file inside it:
 
 `Friday-WorkingHours-Afternoon-PortScan.pcap_ISCX.csv`
 
@@ -58,14 +53,14 @@ After downloading, place the following CSV file inside the `dataset` folder:
 **1. Clone the repository**
 
 ```bash
-git clone https://github.com/YOUR-USERNAME/Ai-based-network-classifier.git
+git clone https://github.com/DH3UV/Ai-based-network-classifier.git
 cd Ai-based-network-classifier
 ```
 
 **2. Install the required libraries**
 
 ```bash
-pip install -r requirements.txt
+pip install pandas numpy scikit-learn joblib streamlit matplotlib
 ```
 
 **3. Train the model**
@@ -74,7 +69,7 @@ pip install -r requirements.txt
 python train_model.py
 ```
 
-This trains the Random Forest model and saves it as `traffic_classifier.pkl`.
+This trains the Random Forest model and saves the trained model as `traffic_classifier.pkl`.
 
 **4. Start the dashboard**
 
@@ -82,23 +77,23 @@ This trains the Random Forest model and saves it as `traffic_classifier.pkl`.
 streamlit run app.py
 ```
 
-Open the local URL shown in your terminal to access the dashboard.
+Open the local URL displayed in your terminal to access the dashboard.
 
-## 📈 Results
+## 📈 Model Results
 
-The model achieved approximately **99.99% accuracy** on the test data.
+The model achieved approximately **99.99% accuracy** on the selected test dataset.
 
-The result is based on a random train-test split of the selected dataset. Performance may vary when tested on different network traffic.
+Results are based on a random train-test split and may vary when tested on different network traffic.
 
 ## ⚠️ Limitations
 
 - Uses an existing dataset instead of live network traffic.
-- Currently supports only BENIGN and PortScan classification.
-- Does not block attacks or provide real-time network protection.
-- Predictions depend on the quality and format of the uploaded data.
+- Currently supports BENIGN and PortScan classification only.
+- Does not block attacks or provide real-time protection.
+- Results depend on the quality and format of the uploaded data.
 
-## 🎯 Project Objective
+## 🎯 Objective
 
-The main objective of this project is to understand how Machine Learning can be applied to Computer Networks for identifying suspicious network traffic and exploring basic network security concepts.
+The aim of this project is to explore how Machine Learning can be used in Computer Networks to identify suspicious traffic and understand basic network security concepts.
 
-Built as a college Computer Networks project.
+**Developed as a college Computer Networks project.**
